@@ -4,19 +4,14 @@ import java.util.LinkedList;
 public class EquationSplit {
 
     LinkedList<String> monomeList = new LinkedList<>();
-    Monome monome;
 
     public void createMonomes(String eq) {
         splitEquation(eq);
 
-        System.out.println(monomeList); //todo remove print
-
         for (String mon : monomeList) {
-            monome = new Monome(mon);
+            new Monome(mon).initializer();
         }
-
     }
-
 
     private void splitEquation(String eq) {
         Collections.addAll(monomeList, eq.split("([-+*/])"));
